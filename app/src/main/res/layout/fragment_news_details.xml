@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/thumnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_image"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:layout_marginEnd="@dimen/twentyfourdp"
+                android:fontFamily="@font/roboto_slab_bold"
+                android:contentDescription="@string/title"
+                android:textColor="#f2f2f2"
+                android:textSize="29sp"
+                tools:text="@string/title" />
+
+            <TextView
+                android:id="@+id/author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:textSize="20sp"
+                android:layout_below="@+id/tv_title"
+                android:layout_marginTop="64dp"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:layout_marginEnd="@dimen/twentyfourdp"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textColor="#f2f2f2"
+                tools:text="@string/author" />
+
+
+            <TextView
+                android:id="@+id/tv_time_stamp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/sixteendp"
+                android:maxLines="1"
+                android:textSize="20sp"
+                android:layout_marginTop="64dp"
+                android:layout_below="@+id/tv_title"
+                android:layout_alignParentEnd="true"
+                android:layout_alignRight="@+id/author"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textColor="#f2f2f2"
+                tools:text="@string/datetime" />
+
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/author"
+                android:layout_marginStart="@dimen/twentyfourdp"
+                android:layout_marginEnd="@dimen/twentyfourdp"
+                android:layout_marginTop="@dimen/sixteendp"
+                android:fontFamily="@font/roboto_slab_regular"
+                android:textColor="#bababa"
+                android:layout_marginBottom="5dp"
+                android:textSize="14sp"
+                tools:text="@string/desc" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="42dp"
+            android:background="@drawable/circlebackground"
+            android:layout_height="42dp"
+            android:layout_margin="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

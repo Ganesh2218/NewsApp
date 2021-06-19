@@ -10,6 +10,10 @@ interface NewsDao {
     @Query("SELECT * FROM databasenews")
     fun getAllNews(): LiveData<List<DatabaseNews>>
 
+    @Query("SELECT * FROM databasenews WHERE category = :category")
+    fun getCategory(category: String) : LiveData<List<DatabaseNews>>
+
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(vararg news: DatabaseNews)
 
