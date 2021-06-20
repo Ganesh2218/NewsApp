@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="news"
+            type="com.example.newsapplication.apicall.NewsProperty" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,6 +22,7 @@
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_image"
+            app:imageUrl="@{news.urlToImage}"
             />
 
         <RelativeLayout
@@ -36,7 +40,8 @@
                 android:layout_marginEnd="@dimen/twentyfourdp"
                 android:fontFamily="@font/roboto_slab_bold"
                 android:contentDescription="@string/title"
-                android:textColor="#f2f2f2"
+                android:text="@{news.title}"
+                android:textColor="@color/author_color"
                 android:textSize="29sp"
                 tools:text="@string/title" />
 
@@ -50,8 +55,9 @@
                 android:layout_marginTop="64dp"
                 android:layout_marginStart="@dimen/twentyfourdp"
                 android:layout_marginEnd="@dimen/twentyfourdp"
+                android:text="@{news.author}"
                 android:fontFamily="@font/roboto_slab_regular"
-                android:textColor="#f2f2f2"
+                android:textColor="@color/author_color"
                 tools:text="@string/author" />
 
 
@@ -67,8 +73,9 @@
                 android:layout_below="@+id/tv_title"
                 android:layout_alignParentEnd="true"
                 android:layout_alignRight="@+id/author"
+                android:text="@{news.publishedAt}"
                 android:fontFamily="@font/roboto_slab_regular"
-                android:textColor="#f2f2f2"
+                android:textColor="@color/author_color"
                 tools:text="@string/datetime" />
 
 
@@ -82,18 +89,19 @@
                 android:layout_marginTop="@dimen/sixteendp"
                 android:fontFamily="@font/roboto_slab_regular"
                 android:textColor="#bababa"
-                android:layout_marginBottom="5dp"
-                android:textSize="14sp"
+                android:text="@{news.description}"
+                android:layout_marginBottom="@dimen/five_dp"
+                android:textSize="@dimen/fourteen_sp"
                 tools:text="@string/desc" />
 
         </RelativeLayout>
 
         <ImageView
             android:id="@+id/backBtn"
-            android:layout_width="42dp"
+            android:layout_width="@dimen/fourtytwodp"
             android:background="@drawable/circlebackground"
-            android:layout_height="42dp"
-            android:layout_margin="20dp"
+            android:layout_height="@dimen/fourtytwodp"
+            android:layout_margin="@dimen/twentydp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:src="@drawable/ic_baseline_arrow_back_24"

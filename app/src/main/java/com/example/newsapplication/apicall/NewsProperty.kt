@@ -23,7 +23,6 @@ data class NewsProperty(
     val content: String?
 ) : Parcelable
 
-//Convert NewsProperty to DatabaseNews
 fun NewsProperty.asDatabaseModel(): DatabaseNews {
     return DatabaseNews(
         author = this.author,

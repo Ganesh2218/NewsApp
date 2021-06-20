@@ -23,6 +23,11 @@
         android:name="com.example.newsapplication.newsui.NewsDetailsFragment"
         android:label="NewsDetailsFragment"
         tools:layout="@layout/fragment_news_details">
+
+        <argument
+            android:name="newsProperty"
+            app:argType="com.example.newsapplication.apicall.NewsProperty" />
+
         <action
             android:id="@+id/action_newsDetailsFragment_to_headlinesFragment"
             app:destination="@id/headlinesFragment"

@@ -10,11 +10,10 @@ import retrofit2.http.Query
 
 private const val BASE_URL = "http://newsapi.org/v2/"
 
-//Query to Call Data from Web Server
 interface NewsAPIService {
-
     @GET("top-headlines?country=id")
-    fun getPropertyNetwork(@Query("apiKey") apiKey : String, @Query("category") categori : String ):
+    fun getNewsDataAsync(@Query("apiKey") apiKey : String,
+                         @Query("category") category : String ):
             Deferred<News>
 
 
@@ -22,12 +21,6 @@ interface NewsAPIService {
 
 }
 
-/*//Convert JSON to Kotlin Object/List
-private val moshi = Moshi.Builder()
-    .add(KotlinJsonAdapterFactory())
-    .build()*/
-
-//Build Connection with Web Server
 private val retrofit = Retrofit.Builder()
     .baseUrl(BASE_URL)
     .addConverterFactory(GsonConverterFactory.create())
@@ -35,7 +28,6 @@ private val retrofit = Retrofit.Builder()
     .build()
 
 
-//Create Retrofit
 object NewsAPI {
     val retrofitService: NewsAPIService by lazy {
         retrofit.create(NewsAPIService::class.java)

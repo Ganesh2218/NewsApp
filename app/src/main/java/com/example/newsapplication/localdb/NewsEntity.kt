@@ -17,7 +17,6 @@ class DatabaseNews constructor(
     val category : String?
 )
 
-//Convert List DatabaseNews to List NewsProperty
 fun List<DatabaseNews>.asDomainModel(): List<NewsProperty> {
     return map {
         NewsProperty(

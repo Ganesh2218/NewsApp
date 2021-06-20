@@ -2,4 +2,8 @@
 <resources>
     <dimen name="sixteendp">16dp</dimen>
     <dimen name="twentyfourdp">24dp</dimen>
+    <dimen name="fourtytwodp">42dp</dimen>
+    <dimen name="twentydp">20dp</dimen>
+    <dimen name="five_dp">5dp</dimen>
+    <dimen name="fourteen_sp">14sp</dimen>
 </resources>
